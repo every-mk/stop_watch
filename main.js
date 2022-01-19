@@ -25,13 +25,21 @@ $(document).ready(function()
       
       set_control_enable("#start_timer");
       set_control_disable("#stop_timer");
-      set_control_enable("#reset_timer"); 
+      
+      if (get_seconds() == 0)
+      {
+        set_control_disable("#reset_timer");  
+      }
+      else
+      {
+        set_control_enable("#reset_timer"); 
+      }
     }
   });
   
   $("#reset_timer").mouseup(function()
   {
-    if (it_id != null)
+    if (set_seconds() != 0)
     {
       clearInterval(it_id);
       it_id = null;
