@@ -39,7 +39,7 @@ $(document).ready(function()
   
   $("#reset_timer").mouseup(function()
   {
-    if (set_seconds() != 0)
+    if ((it_id != null) || (get_seconds() != 0))
     {
       clearInterval(it_id);
       it_id = null;
